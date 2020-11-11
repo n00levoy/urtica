@@ -1,6 +1,6 @@
 ﻿namespace Urtica.FFmpeg.Processes
 {
-    public class AnalyzerProcess : BaseProcess
+    public class AnalysisProcess : BaseProcess
     {
         
     }

@@ -1,6 +1,6 @@
 ﻿namespace Urtica.FFmpeg.Processes
 {
-    public class ConverterProcess : BaseProcess
+    public class ConvertProcess : BaseProcess
     {
     }
 }
