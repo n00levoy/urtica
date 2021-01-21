@@ -2,13 +2,15 @@
 {
     using System;
     using System.Diagnostics;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// Base FFMpeg program process.
     /// </summary>
-    public class BaseProcess : IDisposable
+    public abstract class BaseProcess : IDisposable
     {
         private readonly Process process;
+        private readonly TaskCompletionSource<int> executionCompletionSource;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseProcess"/> class.
@@ -33,7 +35,19 @@
             this.process.OutputDataReceived += this.OnOutputDataReceived;
             this.process.ErrorDataReceived += this.OnErrorDataReceived;
             this.process.Exited += this.OnProcessExited;
+
+            this.executionCompletionSource = new TaskCompletionSource<int>();
         }
+
+        /// <summary>
+        /// Gets a value indicating whether process execution is started.
+        /// </summary>
+        public bool Started { get; private set; }
+
+        /// <summary>
+        /// Gets task of process execution.
+        /// </summary>
+        public Task<int> ExecutionTask => this.executionCompletionSource.Task;
 
         /// <summary>
         /// Disposes process.
@@ -50,10 +64,15 @@
         /// <param name="disposing">Should process be disposed or not.</param>
         protected virtual void Dispose(bool disposing)
         {
-            if (disposing)
+            if (!disposing || this.process == null)
             {
-                this.process?.Dispose();
+                return;
             }
+
+            this.process.OutputDataReceived -= this.OnOutputDataReceived;
+            this.process.ErrorDataReceived -= this.OnErrorDataReceived;
+            this.process.Exited -= this.OnProcessExited;
+            this.process.Dispose();
         }
 
         /// <summary>
@@ -61,23 +80,79 @@
         /// </summary>
         /// <param name="fileName">Name of executable file.</param>
         /// <param name="arguments">Arguments to configure the process execution.</param>
-        protected void Start(string fileName, string arguments)
+        /// <returns>A <see cref="Task"/> representing the process execution.</returns>
+        protected Task<int> Start(string fileName, string arguments)
         {
+            if (this.Started)
+            {
+                return this.ExecutionTask;
+            }
+
+            this.Started = true;
+
             this.process.StartInfo.FileName = fileName;
             this.process.StartInfo.Arguments = arguments;
+
             this.process.Start();
+            this.process.BeginOutputReadLine();
+            this.process.BeginErrorReadLine();
+
+            return this.ExecutionTask;
+        }
+
+        /// <summary>
+        /// Process output data, received from the running process.
+        /// </summary>
+        /// <param name="data">Received output data.</param>
+        protected virtual void ProcessReceivedOutputData(string data)
+        {
+        }
+
+        /// <summary>
+        /// Process error string, received from the running process.
+        /// </summary>
+        /// <param name="data">Received error string.</param>
+        protected virtual void ProcessReceivedErrorData(string data)
+        {
+        }
+
+        /// <summary>
+        /// Process exit of executed process.
+        /// </summary>
+        /// <param name="exitCode">Exit code of the executed process.</param>
+        protected virtual void ProcessExit(int exitCode)
+        {
+            this.executionCompletionSource.TrySetResult(this.process.ExitCode);
         }
 
         private void OnOutputDataReceived(object sender, DataReceivedEventArgs eventArgs)
         {
+            if (!this.Started && eventArgs.Data == null)
+            {
+                return;
+            }
+
+            this.ProcessReceivedOutputData(eventArgs.Data);
         }
 
         private void OnErrorDataReceived(object sender, DataReceivedEventArgs eventArgs)
         {
+            if (!this.Started && eventArgs.Data == null)
+            {
+                return;
+            }
+
+            this.ProcessReceivedErrorData(eventArgs.Data);
         }
 
         private void OnProcessExited(object sender, EventArgs errorCode)
         {
+            if (!this.Started || !this.process.HasExited)
+            {
+                return;
+            }
+
+            this.ProcessExit(this.process.ExitCode);
         }
     }
 }

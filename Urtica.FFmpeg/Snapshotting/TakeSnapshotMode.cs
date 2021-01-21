@@ -1,7 +1,7 @@
 ﻿namespace Urtica.FFmpeg.Snapshotting
 {
     /// <summary>
-    /// Describes taking snapshots algorithm
+    /// Describes taking snapshots algorithm.
     /// </summary>
     public enum TakeSnapshotMode
     {
@@ -11,7 +11,7 @@
         FirstInSet,
 
         /// <summary>
-        /// Takes most representative frame in set (FFmpeg decides which one)
+        /// Takes most representative frame in set (FFmpeg decides which one).
         /// </summary>
         MostRepresentative,
     }
