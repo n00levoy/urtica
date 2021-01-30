@@ -10,7 +10,7 @@
     public abstract class BaseProcess : IDisposable
     {
         private readonly Process process;
-        private readonly TaskCompletionSource<int> executionCompletionSource;
+        private readonly TaskCompletionSource<ProcessExitCode> executionCompletionSource;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseProcess"/> class.
@@ -36,7 +36,7 @@
             this.process.ErrorDataReceived += this.OnErrorDataReceived;
             this.process.Exited += this.OnProcessExited;
 
-            this.executionCompletionSource = new TaskCompletionSource<int>();
+            this.executionCompletionSource = new TaskCompletionSource<ProcessExitCode>();
         }
 
         /// <summary>
@@ -47,7 +47,7 @@
         /// <summary>
         /// Gets task of process execution.
         /// </summary>
-        public Task<int> ExecutionTask => this.executionCompletionSource.Task;
+        public Task<ProcessExitCode> ExecutionTask => this.executionCompletionSource.Task;
 
         /// <summary>
         /// Disposes process.
@@ -81,7 +81,7 @@
         /// <param name="fileName">Name of executable file.</param>
         /// <param name="arguments">Arguments to configure the process execution.</param>
         /// <returns>A <see cref="Task"/> representing the process execution.</returns>
-        protected Task<int> Start(string fileName, string arguments)
+        protected Task<ProcessExitCode> Start(string fileName, string arguments)
         {
             if (this.Started)
             {
@@ -120,9 +120,9 @@
         /// Process exit of executed process.
         /// </summary>
         /// <param name="exitCode">Exit code of the executed process.</param>
-        protected virtual void ProcessExit(int exitCode)
+        protected virtual void ProcessExit(in ProcessExitCode exitCode)
         {
-            this.executionCompletionSource.TrySetResult(this.process.ExitCode);
+            this.executionCompletionSource.TrySetResult(exitCode);
         }
 
         private void OnOutputDataReceived(object sender, DataReceivedEventArgs eventArgs)
@@ -152,7 +152,7 @@
                 return;
             }
 
-            this.ProcessExit(this.process.ExitCode);
+            this.ProcessExit(new ProcessExitCode(this.process.ExitCode));
         }
     }
 }

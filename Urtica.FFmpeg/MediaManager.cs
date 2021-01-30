@@ -3,6 +3,7 @@
     using System;
     using System.Threading.Tasks;
     using Urtica.FFmpeg.Entities;
+    using Urtica.FFmpeg.Entities.Probing;
     using Urtica.FFmpeg.Snapshotting;
 
     /// <summary>

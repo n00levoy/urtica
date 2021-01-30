@@ -7,7 +7,7 @@
     /// </summary>
     public class SnapshotCollection
     {
-        private readonly List<Snapshot> snapshots = new List<Snapshot>();
+        private readonly List<Snapshot> snapshots = new();
 
         /// <summary>
         /// Gets snapshots list.
