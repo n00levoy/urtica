@@ -1,7 +1,7 @@
 ﻿namespace Urtica.FFmpeg.Processes
 {
     /// <summary>
-    /// Describes process exit code / status.
+    /// Describes the process exit code / status.
     /// </summary>
     public readonly struct ProcessExitCode
     {
@@ -15,12 +15,12 @@
         }
 
         /// <summary>
-        /// Gets integer exit code presentation.
+        /// Gets an integer exit code presentation.
         /// </summary>
         public int Code { get; }
 
         /// <summary>
-        /// Gets a value indicating whether process exited successfully.
+        /// Gets a value indicating whether the process exited successfully.
         /// </summary>
         public bool IsSuccess => this.Code == 0;
     }

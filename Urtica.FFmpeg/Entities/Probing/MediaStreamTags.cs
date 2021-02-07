@@ -8,25 +8,25 @@
     public class MediaStreamTags
     {
         /// <summary>
-        /// Gets stream title.
+        /// Gets a stream title.
         /// </summary>
         [JsonPropertyName("title")]
         public string Title { get; init; }
 
         /// <summary>
-        /// Gets stream language.
+        /// Gets a stream language.
         /// </summary>
         [JsonPropertyName("language")]
         public string Language { get; init; }
 
         /// <summary>
-        /// Gets stream duration.
+        /// Gets a stream duration.
         /// </summary>
         [JsonPropertyName("DURATION-eng")]
         public string Duration { get; init; }
 
         /// <summary>
-        /// Gets stream frame count.
+        /// Gets a stream frame count.
         /// </summary>
         [JsonPropertyName("NUMBER_OF_FRAMES-eng")]
         public long FrameCount { get; init; }

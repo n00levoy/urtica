@@ -40,17 +40,17 @@
         }
 
         /// <summary>
-        /// Gets a value indicating whether process execution is started.
+        /// Gets a value indicating whether the process execution is started.
         /// </summary>
         public bool Started { get; private set; }
 
         /// <summary>
-        /// Gets task of process execution.
+        /// Gets a task of the process execution.
         /// </summary>
         public Task<ProcessExitCode> ExecutionTask => this.executionCompletionSource.Task;
 
         /// <summary>
-        /// Disposes process.
+        /// Disposes the process.
         /// </summary>
         public void Dispose()
         {
@@ -59,7 +59,7 @@
         }
 
         /// <summary>
-        /// Disposes process if it should be disposed.
+        /// Disposes the process if it should be disposed.
         /// </summary>
         /// <param name="disposing">Should process be disposed or not.</param>
         protected virtual void Dispose(bool disposing)
@@ -76,9 +76,9 @@
         }
 
         /// <summary>
-        /// Starts process with given args.
+        /// Starts the process with the given args.
         /// </summary>
-        /// <param name="fileName">Name of executable file.</param>
+        /// <param name="fileName">Name of the executable file.</param>
         /// <param name="arguments">Arguments to configure the process execution.</param>
         /// <returns>A <see cref="Task"/> representing the process execution.</returns>
         protected Task<ProcessExitCode> Start(string fileName, string arguments)
@@ -101,7 +101,7 @@
         }
 
         /// <summary>
-        /// Process output data, received from the running process.
+        /// Process an output data, received from the running process.
         /// </summary>
         /// <param name="data">Received output data.</param>
         protected virtual void ProcessReceivedOutputData(string data)
@@ -109,7 +109,7 @@
         }
 
         /// <summary>
-        /// Process error string, received from the running process.
+        /// Process an error string, received from the running process.
         /// </summary>
         /// <param name="data">Received error string.</param>
         protected virtual void ProcessReceivedErrorData(string data)
@@ -117,7 +117,7 @@
         }
 
         /// <summary>
-        /// Process exit of executed process.
+        /// Process the exit of the executed process.
         /// </summary>
         /// <param name="exitCode">Exit code of the executed process.</param>
         protected virtual void ProcessExit(in ProcessExitCode exitCode)

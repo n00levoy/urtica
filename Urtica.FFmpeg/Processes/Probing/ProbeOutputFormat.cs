@@ -1,7 +1,7 @@
 ﻿namespace Urtica.FFmpeg.Processes.Probing
 {
     /// <summary>
-    /// Describes probe process output format.
+    /// Describes a probe process output format.
     /// </summary>
     public enum ProbeOutputFormat
     {

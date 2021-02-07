@@ -9,19 +9,19 @@
     public record MediaInfo
     {
         /// <summary>
-        /// Gets list of streams information.
+        /// Gets a list of the streams information.
         /// </summary>
         [JsonPropertyName("streams")]
         public List<MediaStreamInfo> Streams { get; init; }
 
         /// <summary>
-        /// Gets list of chapters information.
+        /// Gets a list of the chapters information.
         /// </summary>
         [JsonPropertyName("chapters")]
         public List<MediaChapterInfo> Chapters { get; init; }
 
         /// <summary>
-        /// Gets format information.
+        /// Gets a format information.
         /// </summary>
         [JsonPropertyName("format")]
         public MediaFormatInfo Format { get; init; }

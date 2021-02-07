@@ -4,27 +4,27 @@
     using Urtica.FFmpeg.Exceptions;
 
     /// <summary>
-    /// Arguments for probe process.
+    /// Arguments for a probe process.
     /// </summary>
     public class ProbeArguments : IProcessArguments
     {
         /// <summary>
-        /// Gets media file path.
+        /// Gets a media file path which will be probed.
         /// </summary>
         public string MediaFilePath { get; init; }
 
         /// <summary>
-        /// Gets a value indicating whether streams info should be outputted.
+        /// Gets a value indicating whether a streams info should be outputted.
         /// </summary>
         public bool OutputStreams { get; init; }
 
         /// <summary>
-        /// Gets a value indicating whether format info should be outputted.
+        /// Gets a value indicating whether a format info should be outputted.
         /// </summary>
         public bool OutputFormat { get; init; }
 
         /// <summary>
-        /// Gets a value indicating whether chapters info should be outputted.
+        /// Gets a value indicating whether a chapters info should be outputted.
         /// </summary>
         public bool OutputChapters { get; init; }
 

@@ -8,19 +8,19 @@
     public record MediaChapterInfo
     {
         /// <summary>
-        /// Gets chapter start time.
+        /// Gets a chapter start time.
         /// </summary>
         [JsonPropertyName("start_time")]
         public string StartTime { get; init; }
 
         /// <summary>
-        /// Gets chapter end time.
+        /// Gets a chapter end time.
         /// </summary>
         [JsonPropertyName("end_time")]
         public string EndTime { get; init; }
 
         /// <summary>
-        /// Gets tags object.
+        /// Gets a tags object.
         /// </summary>
         [JsonPropertyName("tags")]
         public MediaChapterTags Tags { get; init; }

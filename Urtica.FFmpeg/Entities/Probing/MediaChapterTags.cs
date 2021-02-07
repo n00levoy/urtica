@@ -8,7 +8,7 @@
     public record MediaChapterTags
     {
         /// <summary>
-        /// Gets chapter title.
+        /// Gets a chapter title.
         /// </summary>
         [JsonPropertyName("title")]
         public string Title { get; init; }

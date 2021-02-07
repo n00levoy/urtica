@@ -16,14 +16,14 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="ProbeProcess"/> class.
         /// </summary>
-        /// <param name="binaryPath">Path to probe program executable.</param>
+        /// <param name="binaryPath">The path to the probe program executable.</param>
         public ProbeProcess(string binaryPath)
         {
             this.binaryPath = binaryPath;
         }
 
         /// <summary>
-        /// Extracts requested metadata from media file.
+        /// Extracts a requested metadata from the media file.
         /// </summary>
         /// <param name="arguments">Probe process parameters.</param>
         /// <returns>A <see cref="Task{TResult}"/> representing the result of the asynchronous operation.</returns>

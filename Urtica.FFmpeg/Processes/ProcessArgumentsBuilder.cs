@@ -3,7 +3,7 @@
     using System.Text;
 
     /// <summary>
-    /// Helps building process arguments list.
+    /// Helps building a process arguments list.
     /// </summary>
     public class ProcessArgumentsBuilder
     {
@@ -12,10 +12,10 @@
         private int parametersCount;
 
         /// <summary>
-        /// Adds key-only element to arguments list.
+        /// Adds a key-only element to the arguments list.
         /// </summary>
         /// <param name="key">Key-only argument.</param>
-        /// <returns>Returns instance of this builder with added argument.</returns>
+        /// <returns>Returns an instance of this builder with the added argument.</returns>
         public ProcessArgumentsBuilder AddKeyArgument(string key)
         {
             this.AddSeparatorIfNeeded();
@@ -26,10 +26,10 @@
         }
 
         /// <summary>
-        /// Add value-only element to arguments list.
+        /// Add a value-only element to the arguments list.
         /// </summary>
         /// <param name="value">Value-only argument.</param>
-        /// <returns>Returns instance of this builder with added argument.</returns>
+        /// <returns>Returns an instance of this builder with the added argument.</returns>
         public ProcessArgumentsBuilder AddValueArgument(string value)
         {
             this.AddSeparatorIfNeeded();
@@ -40,11 +40,11 @@
         }
 
         /// <summary>
-        /// Adds key-value pair element to arguments list.
+        /// Adds a key-value pair element to the arguments list.
         /// </summary>
         /// <param name="key">Argument key.</param>
         /// <param name="value">Argument value.</param>
-        /// <returns>Returns instance of this builder with added argument.</returns>
+        /// <returns>Returns an instance of this builder with the added argument.</returns>
         public ProcessArgumentsBuilder AddKeyValuePair(string key, string value)
         {
             this.AddSeparatorIfNeeded();

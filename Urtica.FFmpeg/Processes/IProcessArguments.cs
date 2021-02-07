@@ -6,9 +6,9 @@
     public interface IProcessArguments
     {
         /// <summary>
-        /// Yields list of arguments in form of string to pass for process execution.
+        /// Yields a list of the arguments in the form of a string to pass for the process execution.
         /// </summary>
-        /// <returns>List of arguments as string.</returns>
+        /// <returns>List of the arguments as a string.</returns>
         string ToArgumentsList();
     }
 }
