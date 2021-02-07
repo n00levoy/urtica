@@ -66,5 +66,23 @@
         /// </summary>
         [JsonPropertyName("r_frame_rate")]
         public string FrameRate { get; init; }
+
+        /// <summary>
+        /// Gets average frame rate of video stream.
+        /// </summary>
+        [JsonPropertyName("avg_frame_rate")]
+        public string AverageFrameRate { get; init; }
+
+        /// <summary>
+        /// Gets stream duration.
+        /// </summary>
+        [JsonPropertyName("duration")]
+        public string Duration { get; init; }
+
+        /// <summary>
+        /// Gets stream frame count.
+        /// </summary>
+        [JsonPropertyName("nb_frames")]
+        public long FrameCount { get; init; }
     }
 }

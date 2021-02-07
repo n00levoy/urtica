@@ -3,7 +3,7 @@
     /// <summary>
     /// Common process parameters contract.
     /// </summary>
-    public interface IProcessParameters
+    public interface IProcessArguments
     {
         /// <summary>
         /// Yields list of arguments in form of string to pass for process execution.

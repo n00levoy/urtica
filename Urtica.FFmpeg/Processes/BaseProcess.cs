@@ -5,7 +5,7 @@
     using System.Threading.Tasks;
 
     /// <summary>
-    /// Base FFMpeg program process.
+    /// Base FFmpeg program process.
     /// </summary>
     public abstract class BaseProcess : IDisposable
     {
