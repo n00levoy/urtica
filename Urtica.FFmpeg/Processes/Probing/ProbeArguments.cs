@@ -55,7 +55,7 @@
             }
 
             return argumentsBuilder
-                .WithMediaFileToProcess(this.MediaFilePath)
+                .WithSourceMediaFile(this.MediaFilePath)
                 .ToString();
         }
 

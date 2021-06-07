@@ -84,7 +84,7 @@
         /// <param name="path">The path to the media file to be processed.</param>
         /// <exception cref="ArgumentException">Throws if <paramref name="path"/> is null.</exception>
         /// <returns>Returns an instance of this builder with added argument.</returns>
-        public ProbeArgumentsBuilder WithMediaFileToProcess(string path)
+        public ProbeArgumentsBuilder WithSourceMediaFile(string path)
         {
             if (path == null)
             {
