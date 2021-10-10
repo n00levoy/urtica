@@ -22,6 +22,6 @@
         /// <summary>
         /// Gets a value indicating whether the process exited successfully.
         /// </summary>
-        public bool IsSuccess => this.Code == 0;
+        public bool Success => this.Code == 0;
     }
 }

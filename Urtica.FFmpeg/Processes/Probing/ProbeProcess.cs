@@ -30,7 +30,7 @@
         public async Task<MediaInfo> ProbeFile(ProbeArguments arguments)
         {
             var code = await this.Start(this.binaryPath, arguments.ToArgumentsList());
-            if (!code.IsSuccess)
+            if (!code.Success)
             {
                 return null;
             }

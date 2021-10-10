@@ -14,17 +14,17 @@
         public string MediaFilePath { get; init; }
 
         /// <summary>
-        /// Gets a value indicating whether a streams info should be outputted.
+        /// Gets a value indicating whether a streams info should be output.
         /// </summary>
         public bool OutputStreams { get; init; }
 
         /// <summary>
-        /// Gets a value indicating whether a format info should be outputted.
+        /// Gets a value indicating whether a format info should be output.
         /// </summary>
         public bool OutputFormat { get; init; }
 
         /// <summary>
-        /// Gets a value indicating whether a chapters info should be outputted.
+        /// Gets a value indicating whether a chapters info should be output.
         /// </summary>
         public bool OutputChapters { get; init; }
 

@@ -1,8 +1,8 @@
-﻿using Avalonia;
-using Avalonia.ReactiveUI;
-
-namespace Urtica.App
+﻿namespace Urtica.App
 {
+    using Avalonia;
+    using Avalonia.ReactiveUI;
+
     internal static class Program
     {
         // Initialization code. Don't use any Avalonia, third-party APIs or any

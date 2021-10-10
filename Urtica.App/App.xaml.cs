@@ -1,11 +1,11 @@
-using Avalonia;
-using Avalonia.Controls.ApplicationLifetimes;
-using Avalonia.Markup.Xaml;
-using Urtica.App.ViewModels;
-using Urtica.App.Views;
-
 namespace Urtica.App
 {
+    using Avalonia;
+    using Avalonia.Controls.ApplicationLifetimes;
+    using Avalonia.Markup.Xaml;
+    using Urtica.App.ViewModels;
+    using Urtica.App.Views;
+
     public class App : Application
     {
         public override void Initialize()
@@ -15,7 +15,7 @@ namespace Urtica.App
 
         public override void OnFrameworkInitializationCompleted()
         {
-            if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+            if (this.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
                 desktop.MainWindow = new MainWindow
                 {

@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Urtica.FFmpeg", "Urtica.FFm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Urtica.App", "Urtica.App\Urtica.App.csproj", "{3F4D694D-2F06-43F6-B923-9AFFD9EB6481}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Urtica.CLI", "Urtica.CLI\Urtica.CLI.csproj", "{FBCED75A-EC22-4B70-BDE5-9AFDE3CEC880}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{3F4D694D-2F06-43F6-B923-9AFFD9EB6481}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F4D694D-2F06-43F6-B923-9AFFD9EB6481}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F4D694D-2F06-43F6-B923-9AFFD9EB6481}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBCED75A-EC22-4B70-BDE5-9AFDE3CEC880}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBCED75A-EC22-4B70-BDE5-9AFDE3CEC880}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBCED75A-EC22-4B70-BDE5-9AFDE3CEC880}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBCED75A-EC22-4B70-BDE5-9AFDE3CEC880}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
