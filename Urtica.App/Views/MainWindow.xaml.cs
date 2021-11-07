@@ -1,9 +1,8 @@
-using Avalonia;
-using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
-
 namespace Urtica.App.Views
 {
+    using Avalonia.Controls;
+    using Avalonia.Markup.Xaml;
+
     public class MainWindow : Window
     {
         public MainWindow()
