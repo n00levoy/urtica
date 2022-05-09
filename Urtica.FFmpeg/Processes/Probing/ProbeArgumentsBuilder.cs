@@ -69,16 +69,6 @@
         }
 
         /// <summary>
-        /// Show information about chapters stored in the format.
-        /// </summary>
-        /// <returns>Returns an instance of this builder with the added argument.</returns>
-        public ProbeArgumentsBuilder ShowChapters()
-        {
-            this.AddKeyArgument("show_chapters");
-            return this;
-        }
-
-        /// <summary>
         /// Sets the path to the media file to be probed.
         /// </summary>
         /// <param name="path">The path to the media file to be processed.</param>

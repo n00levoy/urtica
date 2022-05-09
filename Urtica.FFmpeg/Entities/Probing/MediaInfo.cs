@@ -15,12 +15,6 @@
         public List<MediaStreamInfo> Streams { get; init; }
 
         /// <summary>
-        /// Gets a list of the chapters information.
-        /// </summary>
-        [JsonPropertyName("chapters")]
-        public List<MediaChapterInfo> Chapters { get; init; }
-
-        /// <summary>
         /// Gets a format information.
         /// </summary>
         [JsonPropertyName("format")]

@@ -23,11 +23,6 @@
         /// </summary>
         public bool OutputFormat { get; init; }
 
-        /// <summary>
-        /// Gets a value indicating whether a chapters info should be output.
-        /// </summary>
-        public bool OutputChapters { get; init; }
-
         /// <inheritdoc/>
         public string ToArgumentsList()
         {
@@ -49,11 +44,6 @@
                 argumentsBuilder.ShowFormat();
             }
 
-            if (this.OutputChapters)
-            {
-                argumentsBuilder.ShowChapters();
-            }
-
             return argumentsBuilder
                 .WithSourceMediaFile(this.MediaFilePath)
                 .ToString();
@@ -61,7 +51,7 @@
 
         private void ValidateArguments()
         {
-            var hasOutput = this.OutputStreams || this.OutputFormat || this.OutputChapters;
+            var hasOutput = this.OutputStreams || this.OutputFormat;
             if (!hasOutput)
             {
                 throw new NoInfoToOutputException();
